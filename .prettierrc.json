@@ -5,10 +5,12 @@
   "bracketSameLine": true,
   "bracketSpacing": true,
   "jsxSingleQuote": true,
-  "printWidth": 999,
+  "printWidth": 200,
   "proseWrap": "preserve",
   "quoteProps": "consistent",
   "trailingComma": "all",
   "singleQuote": true,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ]
 }
