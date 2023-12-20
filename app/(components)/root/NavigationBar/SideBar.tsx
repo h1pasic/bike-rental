@@ -1,5 +1,5 @@
 'use client'
-import { BuildingLibraryIcon, CursorArrowRaysIcon, FolderIcon, HomeIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
+import { BuildingLibraryIcon, ChartBarSquareIcon, CursorArrowRaysIcon, FolderIcon, HomeIcon, ShoppingBagIcon } from '@heroicons/react/24/outline'
 import { SideElementProps } from '@/app/(components)/root/NavigationBar/SideElement'
 import Profile_Dummy from '@/public/Icons/DummyAvatar.jpg'
 import MobileSidebar from '@/app/(components)/root/NavigationBar/MobileSidebar'
@@ -36,6 +36,7 @@ const SidebarProps: SidebarProps = {
       ],
     },
     { name: 'Book Tickets', icon: CursorArrowRaysIcon, href: '/tickets' },
+    { name: 'Cookie Settings', icon: ChartBarSquareIcon, href: '/cookies' },
   ],
   user: {
     name: 'Max Mustermann',
