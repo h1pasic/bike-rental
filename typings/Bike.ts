@@ -17,7 +17,7 @@ export interface BikeBreakType {
 
 export interface ParkingPlace {
   id: number
-  allowedCategories: BikeCategory[]
+  allowedCategories: Array<BikeCategory['name']>
   bike?: BikeModel
 }
 
