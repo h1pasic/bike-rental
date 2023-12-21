@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <SideBar />
 
-        <div className={structureClasses('px-2 pt-2 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
+        <div className={structureClasses('px-4 pt-4 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
       </body>
     </html>
   )
