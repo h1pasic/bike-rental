@@ -7,7 +7,7 @@ import ProfileBanner from '@/app/(components)/root/NavigationBar/ProfileBanner'
 export default function DesktopSidebar({ elements, user }: SidebarProps) {
   return (
     <div className='hidden select-text lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col'>
-      <div className='flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 dark:border-neutral-700 dark:bg-neutral-800'>
+      <div className='flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pt-2 dark:border-neutral-700 dark:bg-neutral-800'>
         <div className='mb-2 flex h-14 shrink-0 items-center border-b-2 border-solid  border-gray-400 dark:border-gray-200'>
           <svg className='h-8 w-auto dark:fill-white' fill='#000000' viewBox='0 -3 38 38' version='1.1' xmlns='http://www.w3.org/2000/svg'>
             <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
