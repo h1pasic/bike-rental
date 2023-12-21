@@ -28,7 +28,10 @@ export async function deleteStation(id: ObjectId) {
   await collection.deleteOne({ _id: id })
 }
 
-export async function updateStation(old: WithId<Partial<Station>>, update: Partial<Station>) {
+export async function updateStation(id: string | ObjectId, update: WithId<Station> | Station) {
+  // @ts-ignore
+  if (update?._id) delete update._id
+
   const collection = await getCollection(COLLECTION_STATIONS!)
-  await collection.updateOne({ _id: old._id }, { $set: { ...update } })
+  await collection.updateOne({ _id: new ObjectId(id.toString()) }, { $set: update })
 }
