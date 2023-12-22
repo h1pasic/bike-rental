@@ -31,8 +31,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthProvider>
           <SideBar />
 
-          <div className={structureClasses('px-4 pt-4 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
-        
+          <div className={structureClasses('px-4 py-4 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
+
           <CookieBanner permission={cookiePermission} />
         </AuthProvider>
       </body>
