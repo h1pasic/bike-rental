@@ -1,10 +1,9 @@
-import SideElement from '@/app/(components)/root/NavigationBar/SideElement'
+import SideElement, { SideElementProps } from '@/app/(components)/root/NavigationBar/SideElement'
 import structureClasses from '@/lib/Shared/structureClasses'
-import { SidebarProps } from '@/app/(components)/root/NavigationBar/SideBar'
 import ColorModeSwitcher from '@/app/(components)/root/NavigationBar/ColorModeSwitcher'
 import ProfileBanner from '@/app/(components)/root/NavigationBar/ProfileBanner'
 
-export default async function DesktopSidebar({ elements, user }: SidebarProps) {
+export default async function DesktopSidebar({ elements }: { elements: SideElementProps[] }) {
   return (
     <div className='hidden select-text lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col'>
       <div className='flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pt-2 dark:border-neutral-700 dark:bg-neutral-800'>

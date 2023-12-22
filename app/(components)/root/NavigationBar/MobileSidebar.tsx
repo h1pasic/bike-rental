@@ -2,12 +2,11 @@
 import { Fragment, useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Dialog, Transition } from '@headlessui/react'
-import SideElement from '@/app/(components)/root/NavigationBar/SideElement'
-import { SidebarProps } from '@/app/(components)/root/NavigationBar/SideBar'
+import SideElement, { SideElementProps } from '@/app/(components)/root/NavigationBar/SideElement'
 import ColorModeSwitcher from '@/app/(components)/root/NavigationBar/ColorModeSwitcher'
 import structureClasses from '@/lib/Shared/structureClasses'
 
-export default function MobileSidebar({ elements, user }: SidebarProps) {
+export default function MobileSidebar({ elements }: { elements: SideElementProps[] }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
@@ -87,7 +86,7 @@ export default function MobileSidebar({ elements, user }: SidebarProps) {
                           ))}
                         </ul>
                       </li>
-                      <li className={structureClasses('-mx-6 mt-auto', user?.name ? '' : 'hidden')}>{/*<ProfileBanner />*/}</li>
+                      <li className={structureClasses('-mx-6 mt-auto')}>{/*<ProfileBanner />*/}</li>
                     </ul>
                   </nav>
                 </div>
