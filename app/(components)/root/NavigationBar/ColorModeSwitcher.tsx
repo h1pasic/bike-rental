@@ -38,7 +38,7 @@ export default function ColorModeSwitcher({ className }: { className?: string })
   useEffect(() => {
     const preference = parseCookies()?.colorMode ?? window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     setMode(preference) //? Set the initial color-preference
-    updateColorMode(preference, cookiePermission())
+    if (!parseCookies()?.colorMode) updateColorMode(preference, cookiePermission())
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
