@@ -21,14 +21,18 @@ export default function InputGroup(props: InputGroupProps) {
     )
   }
 
+  // const inputProps = props
+  const inputProps = { ...props }
+  delete inputProps.isPending
+
   return (
     <div className='flex items-center gap-2'>
-      {id && props.name && !props.hidden && (
-        <label htmlFor={id} className={twMerge('min-w-[50px] capitalize', props.labelClassName)}>
-          {props.name?.replace(/[^A-Za-z0-9]/g, ' ')}:
+      {id && inputProps.name && !inputProps.hidden && (
+        <label htmlFor={id} className={twMerge('min-w-[50px] capitalize', inputProps.labelClassName)}>
+          {inputProps.name?.replace(/[^A-Za-z0-9]/g, ' ')}:
         </label>
       )}
-      <input {...props} id={id} />
+      <input {...inputProps} id={id} />
     </div>
   )
 }
