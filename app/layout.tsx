@@ -4,6 +4,7 @@ import './globals.css'
 import SideBar from '@/app/(components)/root/NavigationBar/SideBar'
 import structureClasses from '@/lib/Shared/structureClasses'
 import { useColorModeValue } from '@/lib/Shared/ColorModeHandler'
+import AuthProvider from '@/app/(components)/root/AuthProvider'
 import CookieBanner from '@/app/(components)/Shared/CookieBanner'
 import { cookies } from 'next/headers'
 
@@ -27,10 +28,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={structureClasses(useColorModeValue(lightBackground, `dark ${raw_darkBackground}`), '')}>
       <body className={inter.className}>
-        <SideBar />
+        <AuthProvider>
+          <SideBar />
 
-        <div className={structureClasses('px-2 pt-2 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
-        <CookieBanner permission={cookiePermission} />
+          <div className={structureClasses('px-4 pt-4 text-gray-700 dark:text-gray-200 lg:ml-72', lightBackground, darkBackground)}>{children}</div>
+        
+          <CookieBanner permission={cookiePermission} />
+        </AuthProvider>
       </body>
     </html>
   )
