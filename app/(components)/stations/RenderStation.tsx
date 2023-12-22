@@ -13,8 +13,8 @@ export default function RenderStation({ station: initialStation, editable }: { s
   const { onChange } = useForm(station, setStation)
 
   return (
-    <form className='rounded-lg px-4 py-2 dark:bg-neutral-700/40'>
-      <h2 className='mb-4 border-b-[2px] pb-1 text-lg font-semibold dark:border-gray-500'>{station.name}</h2>
+    <form className='rounded-lg bg-neutral-200/50 px-4 py-2 dark:bg-neutral-700/40'>
+      <h2 className='mb-4 border-b-[2px] border-gray-400 pb-1 text-lg font-semibold dark:border-gray-500'>{station.name}</h2>
 
       <div className={structureClasses('mb-2 flex flex-col gap-2')}>
         <InputGroup name='_id' hidden className='flex-1 rounded-md px-2 py-1 dark:bg-neutral-600/60 dark:text-gray-200' defaultValue={station._id.toString()} readOnly />
@@ -50,10 +50,12 @@ export default function RenderStation({ station: initialStation, editable }: { s
 
       {editable && (
         <div className='mt-4 flex justify-end gap-2'>
-          <button className='px-2 py-1 uppercase tracking-wide dark:bg-blue-800/50' formAction={() => UpdateStationAction(initialStation._id, station)}>
+          <button
+            className='rounded-md bg-blue-800/50 px-2 py-1 uppercase tracking-wide text-gray-100 dark:bg-blue-400/50 dark:text-gray-200'
+            formAction={() => UpdateStationAction(initialStation._id, station)}>
             Update
           </button>
-          <button className='px-2 py-1 uppercase tracking-wide dark:bg-red-800/50' formAction={() => DeleteStationAction(station)}>
+          <button className='rounded-md bg-red-800/50 px-2 py-1 uppercase tracking-wide text-gray-100 dark:bg-red-400/50 dark:text-gray-200' formAction={() => DeleteStationAction(station)}>
             Delete
           </button>
         </div>
