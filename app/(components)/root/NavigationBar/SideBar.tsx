@@ -55,6 +55,7 @@ export default async function SideBar() {
 
   if (data?.managementAccess) SidebarProps.elements.push(...ManagementElements)
 
+
   return (
     <>
       <MobileSidebar {...SidebarProps} />
