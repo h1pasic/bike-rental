@@ -13,6 +13,7 @@ export default async function LoadingStations() {
         parkingPlaces: [],
         coordinates: [],
       },
+      reviews: [],
     }),
   )
 
