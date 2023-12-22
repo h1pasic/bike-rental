@@ -26,7 +26,7 @@ export default function InputGroup(props: InputGroupProps) {
   delete inputProps.isPending
 
   return (
-    <div className='flex items-center gap-2'>
+    <div className='flex flex-col gap-1.5 2sm:flex-row 2sm:items-center 2sm:gap-2'>
       {id && inputProps.name && !inputProps.hidden && (
         <label htmlFor={id} className={twMerge('min-w-[50px] capitalize', inputProps.labelClassName)}>
           {inputProps.name?.replace(/[^A-Za-z0-9]/g, ' ')}:
