@@ -15,11 +15,11 @@ export default function RenderStation({ station: initialStation, editable, isPen
 
   return (
     <form className='rounded-lg bg-neutral-200/50 px-4 py-2 dark:bg-neutral-700/40'>
-      <h2 className='mb-4 border-b-[2px] border-gray-400 pb-1 text-lg font-semibold dark:border-gray-500'>
+      <h2 className='border-b-[2px] border-gray-400 pb-1 text-lg font-semibold dark:border-gray-500 2sm:mb-4'>
         <DynamicText isPending={isPending} content={station.name} skHeight='h-4' skContainerClassName='py-1' />
       </h2>
 
-      <div className={structureClasses('mb-2 flex flex-col gap-2')}>
+      <div className={structureClasses('mb-2 flex flex-col gap-4 2sm:gap-2')}>
         <InputGroup name='_id' hidden className='flex-1 rounded-md px-2 py-1 dark:bg-neutral-600/60 dark:text-gray-200' defaultValue={station._id.toString()} readOnly />
         <InputGroup
           isPending={isPending}
