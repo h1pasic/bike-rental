@@ -6,7 +6,6 @@ import SideElement from '@/app/(components)/root/NavigationBar/SideElement'
 import { SidebarProps } from '@/app/(components)/root/NavigationBar/SideBar'
 import ColorModeSwitcher from '@/app/(components)/root/NavigationBar/ColorModeSwitcher'
 import structureClasses from '@/lib/Shared/structureClasses'
-import ProfileBanner from '@/app/(components)/root/NavigationBar/ProfileBanner'
 
 export default function MobileSidebar({ elements, user }: SidebarProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -88,9 +87,7 @@ export default function MobileSidebar({ elements, user }: SidebarProps) {
                           ))}
                         </ul>
                       </li>
-                      <li className={structureClasses('-mx-6 mt-auto', user?.name ? '' : 'hidden')}>
-                        <ProfileBanner user={user} />
-                      </li>
+                      <li className={structureClasses('-mx-6 mt-auto', user?.name ? '' : 'hidden')}>{/*<ProfileBanner />*/}</li>
                     </ul>
                   </nav>
                 </div>
