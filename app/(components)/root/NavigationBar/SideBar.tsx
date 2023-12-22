@@ -2,6 +2,7 @@ import { SideElementProps } from '@/app/(components)/root/NavigationBar/SideElem
 import { StaticImageData } from 'next/image'
 import DesktopSidebar from '@/app/(components)/root/NavigationBar/DesktopSidebar'
 import MobileSidebar from '@/app/(components)/root/NavigationBar/MobileSidebar'
+import getSessionData from '@/lib/Shared/getSessionData'
 
 export interface SidebarProps {
   elements: SideElementProps[]
@@ -11,7 +12,9 @@ export interface SidebarProps {
   }
 }
 
-export default function SideBar() {
+export default async function SideBar() {
+  const { data } = await getSessionData()
+
   const SidebarProps: SidebarProps = {
     elements: [
       { name: 'Home', icon: 'HomeIcon', href: '/' },
@@ -36,6 +39,21 @@ export default function SideBar() {
       { name: 'Book Tickets', icon: 'CursorArrowRaysIcon', href: '/tickets' },
     ],
   }
+  const ManagementElements: SideElementProps[] = [
+    {
+      icon: 'LockOpenIcon',
+      name: 'Management',
+      subitems: [
+        {
+          icon: 'AdjustmentsVerticalIcon',
+          name: 'Manage Stations',
+          href: '/management/stations',
+        },
+      ],
+    },
+  ]
+
+  if (data?.managementAccess) SidebarProps.elements.push(...ManagementElements)
 
   return (
     <>
